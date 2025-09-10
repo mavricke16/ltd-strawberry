@@ -1,0 +1,230 @@
+/* Variables CSS pour un style cohérent */
+:root {
+    --primary-color: #ff3366; /* Un rouge-rose vif, "strawberry" */
+    --secondary-color: #ff6699;
+    --dark-bg: #1a1a1a;
+    --light-bg: #282828;
+    --text-color: #f0f0f0;
+    --text-muted: #aaaaaa;
+    --border-color: #3a3a3a;
+    --font-family: 'Poppins', sans-serif;
+    --spacing-unit: 1rem;
+}
+
+/* Réinitialisation de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--dark-bg);
+    color: var(--text-color);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--secondary-color);
+}
+
+/* --- Header & Navigation --- */
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 3rem;
+    background-color: var(--dark-bg);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    position: relative; /* Indispensable pour que le positionnement du logo fonctionne */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.logo {
+    position: absolute; /* Place le logo par rapport au header */
+    left: 3rem; /* Le positionne à gauche, comme vous le souhaitez */
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 600;
+    position: relative;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+/* Effet de survol */
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    bottom: -5px;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: var(--primary-color);
+}
+
+nav ul li a:hover::after,
+nav ul li a.active::after {
+    width: 100%;
+}
+
+/* --- Section Partenariats --- */
+.partenariats-section {
+    flex: 1;
+    padding: 80px 20px;
+    padding-top: 150px;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.section-description {
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+    color: var(--text-muted);
+}
+
+.partenariats-container {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 30px;
+}
+
+.partenariat-card {
+    background-color: var(--light-bg);
+    padding: 30px;
+    border-radius: 12px;
+    width: 320px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--border-color);
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.partenariat-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.partenariat-card h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: var(--text-color);
+    line-height: 1.2;
+}
+
+.partenariat-card p {
+    font-size: 1rem;
+    color: var(--text-muted);
+}
+
+/* --- Footer --- */
+footer {
+    background-color: var(--dark-bg);
+    color: var(--text-color);
+    text-align: center;
+    padding: 40px 0;
+    font-size: 0.9rem;
+    margin-top: auto;
+    border-top: 1px solid var(--border-color);
+}
+
+/* --- RGB Button --- */
+.rgb-button {
+    display: inline-block;
+    padding: 14px 28px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    background: linear-gradient(270deg, red, orange, yellow, green, blue, indigo, violet);
+    background-size: 1400% 1400%;
+    animation: rgb-animation 10s ease infinite;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    border: none;
+    cursor: pointer;
+}
+
+.rgb-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+}
+
+@keyframes rgb-animation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.rgb-button.fixed-bottom {
+    position: fixed;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+}
+
+/* --- Stars Background --- */
+#stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1; /* Met le canvas derrière tout */
+    background-color: var(--dark-bg);
+    pointer-events: none;
+}
+
+/* Header toujours devant */
+header {
+    z-index: 1000;
+}
+
+/* Bouton fixe devant le contenu mais pas au-dessus du header */
+.rgb-button.fixed-bottom {
+    z-index: 900;
+}

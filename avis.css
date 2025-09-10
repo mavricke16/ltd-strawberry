@@ -1,0 +1,227 @@
+/* Variables CSS pour un style cohérent */
+:root {
+    --primary-color: #ff3366;
+    --secondary-color: #ff6699;
+    --dark-bg: #1a1a1a;
+    --light-bg: #282828;
+    --text-color: #f0f0f0;
+    --text-muted: #aaaaaa;
+    --border-color: #3a3a3a;
+    --font-family: 'Poppins', sans-serif;
+    --spacing-unit: 1rem;
+}
+
+/* Réinitialisation de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--dark-bg);
+    color: var(--text-color);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--secondary-color);
+}
+
+/* --- Header & Navigation --- */
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 3rem;
+    background-color: var(--dark-bg);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.logo {
+    position: absolute;
+    left: 3rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 600;
+    position: relative;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    bottom: -5px;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: var(--primary-color);
+}
+
+nav ul li a:hover::after,
+nav ul li a.active::after {
+    width: 100%;
+}
+
+/* --- Section Avis --- */
+.avis-section {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 40px;
+    background: var(--light-bg);
+    border-radius: 12px;
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.4);
+    text-align: center;
+    margin-top: 100px; /* Plus d'espace avec le header fixe */
+}
+
+.avis-section h1 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    font-size: 2.5rem;
+}
+
+.avis-section .intro {
+    margin-bottom: 30px;
+    color: var(--text-muted);
+}
+
+.avis-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: left;
+}
+
+.avis-section label {
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.avis-section input,
+.avis-section select,
+.avis-section textarea {
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    background: var(--dark-bg);
+    color: var(--text-color);
+}
+
+.avis-section textarea {
+    resize: none;
+}
+
+/* Bouton RGB */
+.rgb-button {
+    padding: 14px 28px;
+    border-radius: 50px;
+    border: none;
+    color: white;
+    font-weight: 600;
+    font-size: 1.1rem;
+    cursor: pointer;
+    background: linear-gradient(270deg, red, orange, yellow, green, blue, indigo, violet);
+    background-size: 1400% 1400%;
+    animation: rgb-animation 10s ease infinite;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.rgb-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+}
+
+@keyframes rgb-animation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.confirmation {
+    display: none;
+    margin-top: 15px;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* Footer */
+footer {
+    background: var(--dark-bg);
+    padding: 15px;
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: auto;
+    border-top: 1px solid var(--border-color);
+}
+
+.avis-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+    text-align: left;
+}
+
+.avis-card {
+    background: var(--dark-bg);
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+    color: var(--text-color);
+}
+
+.avis-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.avis-card .note {
+    font-weight: bold;
+    color: #ffcc00;
+    margin-bottom: 5px;
+}
+
+.avis-card p {
+    color: var(--text-muted);
+    margin: 0;
+}

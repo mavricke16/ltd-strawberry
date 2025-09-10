@@ -1,0 +1,201 @@
+/* Variables CSS pour un style cohérent */
+:root {
+    --primary-color: #ff3366;
+    --secondary-color: #ff6699;
+    --dark-bg: #1a1a1a;
+    --light-bg: #282828;
+    --text-color: #f0f0f0;
+    --text-muted: #aaaaaa;
+    --border-color: #3a3a3a;
+    --font-family: 'Poppins', sans-serif;
+    --spacing-unit: 1rem;
+}
+
+/* Réinitialisation de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--dark-bg);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* --- Conteneur principal (largeur fixe) --- */
+.container {
+    width: 960px; /* Largeur fixe pour désactiver le responsive */
+    margin: 0 auto;
+}
+
+/* --- Header --- */
+/* --- Header --- */
+header {
+    display: flex;
+    justify-content: center; /* Centre le contenu principal horizontalement */
+    align-items: center;
+    padding: 15px 3rem;
+    background-color: var(--dark-bg);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    position: relative;
+}
+
+header .logo {
+    position: absolute;
+    left: 3rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 600;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    bottom: -5px;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after,
+nav ul li a.active::after {
+    width: 100%;
+}
+
+/* --- Section Intro & Services --- */
+.intro {
+    text-align: center;
+    padding: 80px 2rem;
+}
+
+.intro h1 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.services {
+  display: flex;
+  justify-content: center;
+  gap: 30px; /* Espace entre les deux colonnes */
+  padding: 2rem 5%;
+}
+
+.services-column {
+  display: flex;
+  flex-direction: column;
+  gap: 30px; /* Espace entre les cartes dans chaque colonne */
+}
+
+.service-card {
+  background-color: var(--light-bg);
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid var(--border-color);
+  width: 320px;
+  min-height: 250px; /* Assure une hauteur minimale uniforme */
+  display: flex; /* Utilise Flexbox pour un meilleur alignement */
+  flex-direction: column;
+  justify-content: flex-start; /* Aligne le contenu en haut de la carte */
+  align-items: center;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.service-card h2 {
+  font-size: 1.5rem; /* Taille de police pour les titres */
+  font-weight: bold;
+  margin-bottom: 15px; /* Espace après le titre */
+  color: var(--primary-color);
+  line-height: 1.2; /* Améliore l'espacement pour les titres plus longs */
+}
+
+.service-card p {
+  font-size: 1rem;
+  color: var(--text-color);
+}
+
+.service-card h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+.service-card p {
+    color: var(--text-muted);
+}
+
+/* --- Footer (position fixe) --- */
+footer {
+    background-color: var(--dark-bg);
+    color: var(--text-color);
+    text-align: center;
+    padding: 15px 0;
+    font-size: 0.9rem;
+    /* Styles pour maintenir le pied de page en bas de l'écran */
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* --- Bouton RGB --- */
+.rgb-button {
+    display: inline-block;
+    padding: 14px 28px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    background: linear-gradient(270deg, red, orange, yellow, green, blue, indigo, violet);
+    background-size: 1400% 1400%;
+    animation: rgb-animation 10s ease infinite;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    border: none;
+    cursor: pointer;
+}
+
+.rgb-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+}
+
+@keyframes rgb-animation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.rgb-button.fixed-bottom {
+    position: fixed;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+}

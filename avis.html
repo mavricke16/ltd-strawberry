@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Avis sur les vendeurs - LTD Strawberry</title>
+  <link rel="stylesheet" href="avis.css">
+</head>
+<body>
+
+  <header>
+    <nav class="navbar">
+      <div class="logo">LTD Strawberry 🍓</div>
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="equipe.html">Équipe</a></li>
+        <li><a href="partenariats.html">Partenariats</a></li>
+        <li><a href="avis.html" class="active">Avis</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="avis-section">
+    <h1>⭐ Laissez votre avis</h1>
+    <p class="intro">Partagez votre expérience avec nos vendeurs. Vos retours sont envoyés directement à notre équipe via Discord.</p>
+
+    <form id="avisForm">
+      <label for="vendeur">Nom Prénom du vendeur :</label>
+      <input type="text" id="vendeur" name="vendeur" placeholder="Ex : Ayden Davis" required>
+
+      <label for="pseudo">Votre Prénom :</label>
+      <input type="text" id="pseudo" name="pseudo" placeholder="Ex : Kendrick" required>
+
+      <label for="note">Note :</label>
+      <select id="note" name="note" required>
+        <option value="⭐">⭐</option>
+        <option value="⭐⭐">⭐⭐</option>
+        <option value="⭐⭐⭐">⭐⭐⭐</option>
+        <option value="⭐⭐⭐⭐">⭐⭐⭐⭐</option>
+        <option value="⭐⭐⭐⭐⭐">⭐⭐⭐⭐⭐</option>
+      </select>
+
+      <label for="commentaire">Commentaire :</label>
+      <textarea id="commentaire" name="commentaire" rows="4" placeholder="Votre expérience..."></textarea>
+
+      <button type="submit" class="rgb-button">Envoyer l'avis</button>
+    </form>
+<h2 style="color:#ff3b3b; margin-top:30px; text-align:center;">Historique des avis</h2>
+<div id="avis-list" class="avis-list"></div>
+
+    <p id="confirmation" class="confirmation">✅ Merci ! Votre avis a bien été envoyé. !</p>
+    
+  </section>
+
+  
+  <footer>
+    © 2025 LTD Strawberry - Tous droits réservés.
+  </footer>
+</body>
+</html>

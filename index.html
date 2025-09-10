@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LTD Strawberry - Votre Satisfaction, Notre Passion</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="favicon.png"> <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <canvas id="stars-canvas"></canvas>
+
+    <header class="main-header">
+        <div class="container header-content">
+            <a href="#hero" class="logo">LTD Strawberry 🍓</a>
+            <nav class="main-nav" aria-label="Menu de navigation principal">
+                <button class="menu-toggle" aria-controls="main-menu" aria-expanded="false">
+                    <span class="sr-only">Ouvrir le menu</span>
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul id="main-menu">
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="equipe.html">Équipe</a></li>
+                    <li><a href="partenariats.html">Partenariats</a></li>
+                    <li><a href="avis.html">Avis client</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero" class="hero-section section-padding">
+            <div class="container">
+                <h1 class="hero-title animate-fade-in"><span class="highlight">LTD Strawberry</span></h1>
+                <p class="hero-subtitle animate-fade-in-delay">Sucrez votre vie, croquez nos prix !</p>
+                <a href="#services" class="btn btn-primary animate-fade-in-delay-more">Découvrir nos services <i class="fas fa-arrow-down"></i></a>
+            </div>
+        </section>
+
+        <section id="services" class="services-section section-padding bg-dark">
+            <div class="container">
+                <h2 class="section-title">Nos Services</h2>
+                <p class="section-description">Nous offrons une gamme variée de produits et services pour répondre à vos besoins.</p>
+                <div class="grid-layout">
+                    <div class="service-card animate-on-scroll">
+                        <i class="fas fa-store icon-large"></i>
+                        <h3>Vente de nourriture</h3>
+                        <p>Un large choix de boissons, snacks et produits du quotidien de qualité supérieure.</p>
+                    </div>
+                    <div class="service-card animate-on-scroll">
+                        <i class="fas fa-handshake icon-large"></i>
+                        <h3>Partenariats stratégiques</h3>
+                        <p>Développons ensemble des collaborations fructueuses pour un bénéfice mutuel.</p>
+                    </div>
+                    <div class="service-card animate-on-scroll">
+                        <i class="fas fa-users icon-large"></i>
+                        <h3>Support client dédié</h3>
+                        <p>Notre équipe est toujours à votre écoute pour une assistance rapide et efficace.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="equipe" class="team-section section-padding">
+            <div class="container">
+                <h2 class="section-title">Notre Équipe</h2>
+                <p class="section-description">Des professionnels passionnés qui œuvrent pour votre satisfaction.</p>
+                <div class="grid-layout">
+                    <div class="team-member-card animate-on-scroll">
+                        <img src="Ayden.png" alt="Photo de Ayden Davis" class="member-photo"> <h3>Ayden Davis</h3>
+                        <h4>Patron</h4>
+                        <p>Gestion du LTD et des partenariats.<br>Vision stratégique et développement de l'entreprise.</p>
+                        <div class="social-links">
+
+                        </div>
+                    </div>
+                    <div class="team-member-card animate-on-scroll">
+                        <img src="LTD Photo.png" alt="Photo de l'équipe" class="member-photo"> <h3>Nos Employés</h3>
+                        <h4>Le Cœur du LTD Strawberry</h4>
+                        <p>Une équipe dynamique et dévouée, toujours prête à vous servir avec le sourire.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="partenariats" class="partners-section section-padding bg-dark">
+            <div class="container text-center">
+                <h2 class="section-title">Rejoignez l'Aventure au seins du LTD Strawberry</h2>
+                <p class="section-description large">Intéressé(e) par un partenariat ou désireux(se) de faire partie de notre équipe ?</p>
+                <a href="https://discord.gg/pQhTdJQDS9" target="_blank" class="btn btn-discord animate-on-scroll">
+                    <i class="fab fa-discord"></i> Rejoindre notre Discord
+                </a>
+            </div>
+        </section>
+    <footer class="main-footer bg-dark">
+        <div class="container">
+            <p>&copy; mavricke16. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
